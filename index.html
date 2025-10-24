@@ -1,25 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Webhook WhatsApp Guardião</title>
-    <meta charset="utf-8">
-</head>
-<body>
-    <script>
-        // Webhook para WhatsApp Meta
-        const urlParams = new URLSearchParams(window.location.search);
-        const mode = urlParams.get('hub.mode');
-        const token = urlParams.get('hub.verify_token');
-        const challenge = urlParams.get('hub.challenge');
-        
-        if (mode === 'subscribe' && token === 'GUARDIAO_WA_WEBHOOK_2025') {
-            // Limpar a página e mostrar apenas o challenge
-            document.body.innerHTML = '';
-            document.write(challenge);
-        } else {
-            document.body.innerHTML = '';
-            document.write('Token inválido');
-        }
-    </script>
-</body>
-</html>
+<script>
+// Webhook WhatsApp Meta - GitHub Pages
+const urlParams = new URLSearchParams(window.location.search);
+const mode = urlParams.get('hub.mode');
+const token = urlParams.get('hub.verify_token');
+const challenge = urlParams.get('hub.challenge');
+
+if (mode === 'subscribe' && token === 'GUARDIAO_WA_WEBHOOK_2025') {
+    // Retornar apenas o challenge - limpar tudo e mostrar só o texto
+    document.open();
+    document.write(challenge);
+    document.close();
+} else {
+    document.open();
+    document.write('Token inválido');
+    document.close();
+}
+</script>
