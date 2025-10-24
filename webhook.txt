@@ -1,1 +1,18 @@
-GUARDIAO_WA_WEBHOOK_2025
+<script>
+// Webhook WhatsApp Meta - GitHub Pages
+const urlParams = new URLSearchParams(window.location.search);
+const mode = urlParams.get('hub.mode');
+const token = urlParams.get('hub.verify_token');
+const challenge = urlParams.get('hub.challenge');
+
+if (mode === 'subscribe' && token === 'GUARDIAO_WA_WEBHOOK_2025') {
+    // Retornar apenas o challenge - limpar tudo e mostrar só o texto
+    document.open();
+    document.write(challenge);
+    document.close();
+} else {
+    document.open();
+    document.write('Token inválido');
+    document.close();
+}
+</script>
