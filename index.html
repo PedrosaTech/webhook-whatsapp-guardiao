@@ -13,9 +13,11 @@
         const challenge = urlParams.get('hub.challenge');
         
         if (mode === 'subscribe' && token === 'GUARDIAO_WA_WEBHOOK_2025') {
-            // Retornar apenas o challenge
+            // Limpar a página e mostrar apenas o challenge
+            document.body.innerHTML = '';
             document.write(challenge);
         } else {
+            document.body.innerHTML = '';
             document.write('Token inválido');
         }
     </script>
