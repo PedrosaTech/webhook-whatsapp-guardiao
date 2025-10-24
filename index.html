@@ -13,18 +13,10 @@
         const challenge = urlParams.get('hub.challenge');
         
         if (mode === 'subscribe' && token === 'GUARDIAO_WA_WEBHOOK_2025') {
-            document.body.innerHTML = challenge;
-            document.body.style.fontSize = '24px';
-            document.body.style.textAlign = 'center';
-            document.body.style.paddingTop = '50px';
-            document.body.style.fontFamily = 'Arial, sans-serif';
+            // Retornar apenas o challenge
+            document.write(challenge);
         } else {
-            document.body.innerHTML = 'Token inválido';
-            document.body.style.color = 'red';
-            document.body.style.fontSize = '24px';
-            document.body.style.textAlign = 'center';
-            document.body.style.paddingTop = '50px';
-            document.body.style.fontFamily = 'Arial, sans-serif';
+            document.write('Token inválido');
         }
     </script>
 </body>
