@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Webhook WhatsApp Guardião</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        // Webhook para WhatsApp Meta
+        const urlParams = new URLSearchParams(window.location.search);
+        const mode = urlParams.get('hub.mode');
+        const token = urlParams.get('hub.verify_token');
+        const challenge = urlParams.get('hub.challenge');
+        
+        if (mode === 'subscribe' && token === 'GUARDIAO_WA_WEBHOOK_2025') {
+            document.body.innerHTML = challenge;
+            document.body.style.fontSize = '24px';
+            document.body.style.textAlign = 'center';
+            document.body.style.paddingTop = '50px';
+            document.body.style.fontFamily = 'Arial, sans-serif';
+        } else {
+            document.body.innerHTML = 'Token inválido';
+            document.body.style.color = 'red';
+            document.body.style.fontSize = '24px';
+            document.body.style.textAlign = 'center';
+            document.body.style.paddingTop = '50px';
+            document.body.style.fontFamily = 'Arial, sans-serif';
+        }
+    </script>
+</body>
+</html>
